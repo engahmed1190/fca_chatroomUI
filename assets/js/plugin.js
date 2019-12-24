@@ -3,7 +3,7 @@ WebChat.default.init({
     initPayload: "/get_started",
     interval: 100, // 1000 ms between each message
     customData: {"userId": "333", "language": "ar"}, // arbitrary custom data. Stay minimal as this will be added to the socket
-    socketUrl: "http://167.172.226.61:5005",
+    socketUrl: "https://fca.brainwise.me",
 	//socketUrl: "http://localhost:5050",
     socketPath: "/socket.io/",
     title: "FCA Chatbot",
