@@ -1,26 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.css" />
-</head>
-<body>
-  <div class="chat-container"></div>
+<html>
 
-  <script src="https://npm-scalableminds.s3.eu-central-1.amazonaws.com/@scalableminds/chatroom@master/dist/Chatroom.js"/></script>
-  <script type="text/javascript">
-    var chatroom = new window.Chatroom({
-      host: "http://167.172.226.61:5005",
-      title: "FCA Chatbot",
-      container: document.querySelector(".chat-container"),
-      welcomeMessage: "Hi There , . How may I help you?",
-      speechRecognition: "en-US",
-      voiceLang: "en-US"
-    });
-    chatroom.openChat();
-  </script>
+<head>
+  <title>Demo Page</title>
+  <meta http-equiv='cache-control' content='no-cache'>
+  <meta http-equiv='expires' content='0'>
+  <meta http-equiv='pragma' content='no-cache'>
+</head>
+
+<body>
+<div id="webchat"/>
+<script src="assets/js/webchat.js"></script>
+<script src="assets/js/plugin.js"></script>
+
 </body>
-</script>
+
 </html>
