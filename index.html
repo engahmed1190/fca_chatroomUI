@@ -1,25 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <title>Demo Page</title>
-  <meta http-equiv='cache-control' content='no-cache'>
-  <meta http-equiv='expires' content='0'>
-  <meta http-equiv='pragma' content='no-cache'>
+    <title>Botfront - Web Chat</title>
 </head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<body >
 
-<body>
-<div id="webchat"/>
-<script src="assets/js/webchat-latest.js"></script>
-<script src="assets/js/plugin-latest.js"></script>
 
 <button onclick="Clear()">Clear Chat</button>
 
 <script>
 function Clear() {
-  localStorage.clear();
+  window.localStorage.clear();
+  window.sessionStorage.clear();
   location.reload();
 }
+</script>
+
+
+<script src="index.js"  type="text/javascript"></script>
+<div id="webchat"></div>
+<script>
+  WebChat.default.init({
+    selector: "#webchat",
+    initPayload: "/get_started",
+    socketUrl: "https://fca.brainwise.me/",
+    tooltipPayload: "/get_started",
+    tooltipDelay: 40000,
+    socketPath: "/socket.io/",
+    customData: {
+      language: 'en'
+    },
+    title:'FCA Chatbot',
+    subtitle: 'typically replies instantly',
+    inputTextFieldHint: "Type a message...",
+    connectingText: "Waiting for server...",
+    connectingLogo:"https://i.ibb.co/g6prz3c/Infinity-1s-200px.gif",
+    //profileAvatar: "https://image.freepik.com/free-vector/businessman-character-avatar-icon-vector-illustration-design_24877-18271.jpg",
+    hideWhenNotConnected: false,
+    onSocketEvent: {
+      'bot_uttered': () => console.log('bot uttered'),
+    },
+	profileAvatar: "Avatar.png",
+    // embedded:true,
+    docViewer: true,
+    params: {
+      images: {
+        dims: {
+          width: 300,
+          height: 200
+        }
+      },
+      storage: "session"
+    }
+  })
 </script>
 </body>
 
